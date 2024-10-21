@@ -1,0 +1,29 @@
+<form class="mb-4" method='POST' action='updateJugador'>
+
+    <select class="form-select" name="id_equipo">
+        <option selected>Seleccionar Categoria</option>
+        <?php foreach ($equipos as $equipo) : ?>
+            <option <?php if ($equipo->id_equipo == $jugador->id_equipo) : ?> selected<?php endif; ?> value="<?= $equipo->id_equipo ?>"><?= $equipo->nombre ?></option>
+        <?php endforeach ?>
+    </select>
+    <div class='form-group'>
+        <label for='nombre'>Nombre</label>
+        <input type='text' class='form-control' name='nombre' required value="<?= $jugador->nombre ?>">
+    </div>
+    <div class='form-group'>
+        <label for='posicion'>Posicion</label>
+        <input type='text' class='form-control' name='posicion' required value="<?= $jugador->posicion ?>">
+    </div>
+    <div class='form-group'>
+        <label for='pie_habil'>Pie habil</label>
+        <input type='text' class='form-control' name='pie_habil' required value="<?= $jugador->pie_habil ?>">
+    </div>
+    <div class='form-group'>
+        <label for='nacionalidad'>Nacionalidad</label>
+        <input type='text' class='form-control' name='nacionalidad' required value="<?= $jugador->nacionalidad ?>">
+    </div>
+    <div>
+        <input type="hidden" name="id_jugador" value="<?= $jugador->id_jugador ?>">
+    </div>
+    <button type='submit' class='btn btn-primary'>Enviar</button>
+</form>

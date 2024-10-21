@@ -1,0 +1,29 @@
+
+<form  class="mb-4" method='POST' action='addJugador'>
+
+    <select class="form-select" name="id_equipo">  // este dato va a la db
+        <option selected>Seleccionar Categoria</option>
+        <?php foreach($equipos as $equipo) : ?>  // de cada equipo manda el id y muestra el nombre , probamos a ver que hace
+        <option value="<?= $equipo->id_equipo ?>"><?= $equipo->nombre ?></option>
+        <?php endforeach ?>
+    </select>
+    <div class='form-group'>
+        <label for='nombre'>Nombre</label>
+        <input type='text' class='form-control'  name='nombre' required>
+    </div>
+    <div class='form-group'>
+        <label for='posicion'>Posicion</label>
+        <input type='text' class='form-control'  name='posicion' required>
+    </div>
+    <div class='form-group'>
+        <label for='pie_habil'>Pie habil</label>
+        <input type='text' class='form-control'  name='pie_habil' required>
+    </div>
+    <div class='form-group'>
+        <label for='nacionalidad'>Nacionalidad</label>
+        <input type='text' class='form-control'  name='nacionalidad' required>
+    </div>
+    <button type='submit' class='btn btn-primary'>Enviar</button>
+</form>
+
+
