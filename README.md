@@ -6,17 +6,16 @@
 - Fabricio Britos   
 - Kevin Silva
 
-<Descripcion de proyecto :
+## Descripcion de proyecto :
 Este proyecto esta enfocado en poder obtener, insertar , actualizar y eliminar tanto jugadores como equipos de las grandes ligas. 
 El sitio incluye un sistema de autenticación que permite que solo los usuarios registrados puedan agregar, editar o eliminar jugadores y equipos. Si no se inicio sesion, no se muestran ni los jugadores ni los equipos.
 
->.[!NOTE].
-    >Funcionalidades Principales :
-    >Visualización de los jugadores, ordenadas por vistas.
-    >Vista detallada de cada jugador y equipo, incluyendo nombre, posicion, pie habil y nacionalidad (jugadores).Nombre del equipo, puntos pj, pg, pe, pp (equipos).
-    >Visualización y gestión de jugadores e equipos.
-    >CRUD de jugadores y equipos (solo para usuarios autenticados).
-    >Sistema de login y logout.
+## Funcionalidades Principales :
+-Visualización de los jugadores, ordenadas por vistas.
+-Vista detallada de cada jugador y equipo, incluyendo nombre, posicion, pie habil y nacionalidad (jugadores). Nombre del equipo, puntos pj, pg, pe, pp (equipos).
+-Visualización y gestión de jugadores e equipos.
+-CRUD de jugadores y equipos (solo para usuarios autenticados).
+-Sistema de login y logout.
 
 
 ## Tablas
@@ -27,7 +26,7 @@ El sitio incluye un sistema de autenticación que permite que solo los usuarios 
 - `posicion`: posicion del jugador
 - `pie habil`: pie habil del jugador
 - `nacionalidad`: nacionalidad del jugador
-- `id_equpo`: clave foránea que referencia la tabla de artistas
+- `id_equipo`: clave foránea que referencia la tabla de artistas
 
 ### La tabla `equipos` contiene:
 - `id_equipo`: clave primaria (autoincremental)
@@ -42,6 +41,7 @@ El sitio incluye un sistema de autenticación que permite que solo los usuarios 
 - `id`: clave primaria (autoincremental)
 - `email`: nombre de usuario
 - `password`: contraseña almacenada de forma segura (hash)
+
 
 ## Instalación
 
@@ -64,6 +64,8 @@ El sitio incluye un sistema de autenticación que permite que solo los usuarios 
 ## Caracteristicas tecnicas:
  
 - Nuestra app esta desarrollada utilizando el patrón MVC.
+
+
 
 
 
