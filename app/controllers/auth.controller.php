@@ -32,8 +32,6 @@ class AuthController {
         $userFromDB = $this->model->getUserByEmail($email);
         
 
-        // password: 123456
-        // $userFromDB->password: $2y$10$xQop0wF1YJ/dKhZcWDqHceUM96S04u73zGeJtU80a1GmM.H5H0EHC
         if($userFromDB && password_verify($password, $userFromDB->password)){
             // Guardo en la sesión el ID del usuario
             session_start();

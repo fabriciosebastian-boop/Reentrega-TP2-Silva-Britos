@@ -20,17 +20,16 @@ require_once 'app/views/jugadores.view.php';
             $jugador = $this->model->getJugadores();
 
              //pedimos los equipos desde aca
-             $equipos = $this->equiposModel->getEquipos(); // aca pedimos los equipos a la db
+             $equipos = $this->equiposModel->getEquipos(); 
 
             //mando los jugadores a la vista
             $this->view->showJugadores($jugador, $equipos);
         }
 
         public function showJugadorId($id){
-             //obtengo los jugadores de la DB
+             
              $jugador = $this->model->getJugadorById($id);
 
-             //mando los jugadores a la vista
              $this->view->showJugadorId($jugador);
 
         }

@@ -38,6 +38,7 @@ switch ($params[0]) {
         $controller->logout();
     case 'jugadores':
         sessionAuthMiddleware($res);
+        verifyAuthMiddleware($res);
         if (isset($params[1])) {
             $controller = new JugadoresController($res);
             $controller->showJugadorId($params[1]);
@@ -47,11 +48,13 @@ switch ($params[0]) {
         }
         break;
     case 'equipos':
+        sessionAuthMiddleware($res);
+        verifyAuthMiddleware($res);
         if (isset($params[1])) {
-            $controller = new EquiposController();
+            $controller = new EquiposController($res);
             $controller->showEquipoId($params[1]);
         } else {
-            $controller = new EquiposController();
+            $controller = new EquiposController($res);
             $controller->showEquipos();
         }
         break;
@@ -60,6 +63,7 @@ switch ($params[0]) {
         verifyAuthMiddleware($res); // Verifica que el usuario esté logueado o redirige a login
         $controller = new JugadoresController($res);
         $controller->addJugador();
+        break;
     case 'editJugador':
         sessionAuthMiddleware($res); // Setea $res->user si existe session
         verifyAuthMiddleware($res); // Verifica que el usuario esté logueado o redirige a login
@@ -83,6 +87,7 @@ switch ($params[0]) {
         verifyAuthMiddleware($res); // Verifica que el usuario esté logueado o redirige a login
         $controller = new EquiposController($res);
         $controller->addEquipo();
+        break;
     case 'editEquipo':
         sessionAuthMiddleware($res); // Setea $res->user si existe session
         verifyAuthMiddleware($res); // Verifica que el usuario esté logueado o redirige a login
@@ -94,6 +99,12 @@ switch ($params[0]) {
         verifyAuthMiddleware($res); // Verifica que el usuario esté logueado o redirige a login
         $controller = new EquiposController($res);
         $controller->updateEquipo();
+        break;
+    case 'deleteEquipo':
+        sessionAuthMiddleware($res);
+        verifyAuthMiddleware($res); // Verifica que el usuario esté logueado o redirige a login
+        $controller = new EquiposController($res);
+        $controller->deleteEquipo($params[1]);
         break;
     default:
         echo ("404 not found(error)");

@@ -6,9 +6,9 @@ require_once 'app/views/equipos.view.php';
         private $model;
         private $view;
 
-        public function __construct() {
+        public function __construct($res) {
             $this->model = new EquiposModel();
-            $this->view = new EquiposView();
+            $this->view = new EquiposView($res->user);
             
         }
 
@@ -125,6 +125,19 @@ require_once 'app/views/equipos.view.php';
         // redirijo al home 
         header('Location: ' . BASE_URL . 'equipos');
     }
+
+    public function deleteEquipo($id) {
+        $equipo = $this->model->getEquipoById($id);
+
+        if (!$equipo) {
+            return $this->view->showError("No existe el equipo con el id=$id");
+        }
+
+        $this->model->eraseEquipo($id);
+
+        header('Location: ' . BASE_URL. 'equipos');
+    }
+
 
 
     

@@ -36,14 +36,15 @@ class EquiposModel {
         return $id;
     }
  
-    public function deleteEquipo($id) {
-        $query = $this->db->prepare('DELETE FROM equipo WHERE id = ?');
+    public function eraseEquipo($id) {
+        $query = $this->db->prepare('DELETE FROM equipo WHERE id_equipo = ?');
         $query->execute([$id]);
     }
 
-    public function updateEquipo($id_equipo, $nombre, $puntos, $pj, $pg, $pe, $pp) {        
-        $query = $this->db->prepare('UPDATE equipo SET nombre = ? , puntos = ? , pj = ? , pg = ? , pe = ? , pp = ? WHERE id_equipo = ?');
-        $query->execute([$id_equipo, $nombre, $puntos, $pj, $pg, $pe, $pp]);
+    public function updateEquipo($id_equipo, $nombre, $puntos, $pj, $pg, $pe, $pp) {
+            
+        $query = $this->db->prepare('UPDATE equipo SET  nombre = ? , puntos = ? , pj = ? , pg = ? , pe = ? , pp = ? WHERE id_equipo = ?');
+        $query->execute([$nombre, $puntos, $pj, $pg, $pe, $pp, $id_equipo]);
     }
     
 

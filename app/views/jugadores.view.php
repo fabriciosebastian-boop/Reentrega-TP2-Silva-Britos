@@ -43,7 +43,7 @@ class JugadoresView {
             }
             echo '</tbody>
             </table>';
-            
+
             require_once 'templates/layout/footer.phtml';
         
 
@@ -59,7 +59,7 @@ class JugadoresView {
                         <th scope="col">Posicion</th>
                         <th scope="col">Pie Habil</th>
                         <th scope="col">Nacionalidad</th>
-                    </tr>
+                    </tr>  
                     </thead>
                     <tbody>
                     <tr>
@@ -77,9 +77,9 @@ class JugadoresView {
             }
 
     public function showEditarJugador($jugador, $equipos){
-        require_once 'templates/layout/header.phtml';
-        require_once 'templates/form_editarJugador.phtml';
-        require_once 'templates/layout/footer.phtml';
+        require_once './templates/layout/header.phtml';
+        require_once './templates/form_editarJugador.phtml';
+        require_once './templates/layout/footer.phtml';
     }
 
     public function showError($error) {

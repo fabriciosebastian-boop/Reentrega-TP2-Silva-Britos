@@ -5,6 +5,11 @@ require_once 'app/controllers/equipos.controller.php';
 
 
 class EquiposView {
+    private $user = null;
+
+    public function __construct($user) {
+        $this->user = $user;
+    }
 
     public function showEquipos($equipo) {
         require_once './templates/layout/header.phtml';
@@ -40,8 +45,14 @@ class EquiposView {
         }
         echo '</tbody>
             </table>';
-
-
+        
+        echo '<ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="btn btn-danger btn-sm ml-auto" href="logout">Cerrar Sesion</a>
+                </li>
+            </ul>';
+         require_once 'templates/layout/footer.phtml';
+         
     }
 
     public function showEquipoId($equipo){

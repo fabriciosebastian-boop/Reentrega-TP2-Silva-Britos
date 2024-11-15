@@ -28,7 +28,7 @@ class JugadoresModel {
     }
  
     public function insertJugador($id_equipo, $nombre, $posicion, $pie_habil, $nacionalidad) { 
-        $query = $this->db->prepare('INSERT INTO jugador (id_jugador, id_equipo, nombre, posicion, pie_habil, nacionalidad) VALUES (NULL, ?, ?, ?, ?, ?)');
+        $query = $this->db->prepare('INSERT INTO jugador (id_equipo, nombre, posicion, pie_habil, nacionalidad) VALUES ( ?, ?, ?, ?, ?)');
         $query->execute([$id_equipo, $nombre, $posicion, $pie_habil, $nacionalidad]);
     
         $id = $this->db->lastInsertId();
