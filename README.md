@@ -26,7 +26,7 @@ El sitio incluye un sistema de autenticación que permite que solo los usuarios 
 - `posicion`: posicion del jugador
 - `pie habil`: pie habil del jugador
 - `nacionalidad`: nacionalidad del jugador
-- `id_equipo`: clave foránea que referencia la tabla de artistas
+- `id_equipo`: clave foránea que referencia la tabla de jugadores
 
 ### La tabla `equipos` contiene:
 - `id_equipo`: clave primaria (autoincremental)
